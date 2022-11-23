@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ShelfSelector from './ShelfSelector';
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { shelvesObj } from '../constants/shelves';
 
@@ -10,7 +10,7 @@ const Book = ({ bookInfo, onChange }) => {
         bookInfo.imageLinks.smallThumbnail : '';
     const authors = bookInfo.hasOwnProperty('authors') ?
         bookInfo.authors : [];
-    const isShelfed = () => bookInfo.hasOwnProperty('shelf') && bookInfo.shelf != 'none';
+    const isShelfed = () => bookInfo.hasOwnProperty('shelf') && bookInfo.shelf !== 'none';
     const path = useLocation().pathname
     const isAtSearchPage = () => path === '/search'
 
@@ -62,5 +62,8 @@ const Book = ({ bookInfo, onChange }) => {
         </div>
     )
 };
-
+Book.propTypes = {
+    bookInfo: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+};
 export default Book;

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import Shelf from '../components/Shelf';
 import { shelves } from '../constants/shelves'
 import React from 'react';
+import PropTypes from 'prop-types';
+
 const ShelvesPage = ({ books, onChange }) => {
     return (
         <div className="list-books">
@@ -24,4 +26,8 @@ const ShelvesPage = ({ books, onChange }) => {
     );
 };
 
+ShelvesPage.propTypes={
+    books: PropTypes.array.isRequired, 
+    onChange: PropTypes.func.isRequired
+};
 export default ShelvesPage;

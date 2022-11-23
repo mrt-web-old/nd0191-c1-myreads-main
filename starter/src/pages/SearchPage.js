@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../BooksAPI'
 import Book from '../components/Book';
+import PropTypes from 'prop-types'
 
 const SearchPage = ({ onChange, searchResults, updateSearchResults }) => {
     const [value, setValue] = useState('');
@@ -60,4 +61,10 @@ const SearchPage = ({ onChange, searchResults, updateSearchResults }) => {
     );
 };
 
+
+SearchPage.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    searchResults: PropTypes.array.isRequired,
+    updateSearchResults: PropTypes.func.isRequired
+};
 export default SearchPage;

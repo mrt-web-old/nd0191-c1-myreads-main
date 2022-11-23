@@ -1,9 +1,10 @@
 import { shelves } from '../constants/shelves';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 
-const SehlfSelector = ({ shelf, book, onChange }) => {
+const ShelfSelector = ({ shelf, book, onChange }) => {
 
     const path = useLocation().pathname;
 
@@ -24,4 +25,9 @@ const SehlfSelector = ({ shelf, book, onChange }) => {
     );
 };
 
-export default SehlfSelector;
+ShelfSelector.propTypes = {
+    shelf: PropTypes.string.isRequired,
+    book: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+};
+export default ShelfSelector;
