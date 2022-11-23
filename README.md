@@ -1,6 +1,6 @@
 # MyReads Project
 
-This is MyReads, a React App that helps organise your books in shelves (`Currently Reading`, , `Want To Read`, `Read`)
+This is MyReads, a React App that helps organise your books in shelves (`Currently Reading`, `Want To Read`, `Read`)
 
 
 ## TL;DR
